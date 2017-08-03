@@ -1,0 +1,35 @@
+{
+    "name": "webthink/psr-test-container",
+    "homepage": "https://github.com/webthinkgr/psr-test-container",
+    "description": "A PSR container implementation to be used only for testing",
+    "keywords": ["psr", "psr-11", "container", "container-interop", "container-interface"],
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "George Mponos",
+            "email": "gmponos@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "psr/container": "^1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.*|^5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Webthink\\Container\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Webthink\\Container\\Test\\": "tests"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        }
+    }
+}
