@@ -29,7 +29,7 @@ class SimpleContainerTest extends \PHPUnit_Framework_TestCase
     public function testInitializeTheContainerWithANonStringKeyForAService()
     {
         $this->setExpectedException(ContainerExceptionInterface::class);
-        new SimpleContainer([1 => new \stdClass()]);
+        new SimpleContainer(array(1 => new \stdClass()));
     }
 
     public function testGetServiceFromContainerWithANonStringValue()
