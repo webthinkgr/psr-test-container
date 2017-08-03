@@ -3,7 +3,7 @@
     "homepage": "https://github.com/webthinkgr/psr-test-container",
     "description": "A PSR container implementation to be used only for testing",
     "keywords": ["psr", "psr-11", "container", "container-interop", "container-interface"],
-    "license": "proprietary",
+    "license": "MIT",
     "authors": [
         {
             "name": "George Mponos",

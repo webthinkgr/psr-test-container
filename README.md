@@ -25,3 +25,11 @@ $container = new Webthink\Container\SimpleContaner(
 );
 $service = $container->get('service1');
 ```
+
+## Credits
+
+- [George Mponos](https://github.com/gmponos)
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
