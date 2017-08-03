@@ -2,6 +2,8 @@
 
 namespace Webthink\Container;
 
-class NotFoundException extends ContainerException
+use Psr\Container\NotFoundExceptionInterface;
+
+class NotFoundException extends ContainerException implements NotFoundExceptionInterface
 {
 }

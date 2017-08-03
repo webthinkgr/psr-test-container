@@ -2,7 +2,8 @@
 
 namespace Webthink\Container\Test;
 
-use Webthink\Container\NotFoundException;
+use Psr\Container\ContainerExceptionInterface;
+use Psr\Container\NotFoundExceptionInterface;
 use Webthink\Container\SimpleContainer;
 
 class SimpleContainerTest extends \PHPUnit_Framework_TestCase
@@ -20,20 +21,47 @@ class SimpleContainerTest extends \PHPUnit_Framework_TestCase
                 'service1' => new \stdClass(),
                 'parameter1' => 'value1',
                 'service2' => new \Exception(),
+                'array' => array('value_1', 'value_2')
             )
         );
     }
 
+    public function testInitializeTheContainerWithANonStringKeyForAService()
+    {
+        $this->setExpectedException(ContainerExceptionInterface::class);
+        new SimpleContainer([1 => new \stdClass()]);
+    }
+
+    public function testGetServiceFromContainerWithANonStringValue()
+    {
+        $this->setExpectedException(ContainerExceptionInterface::class);
+        $this->container->get(1);
+    }
+    
     public function testGetEntryFromContainer()
     {
         $this->assertInstanceOf(\stdClass::class, $this->container->get('service1'));
         $this->assertInstanceOf(\Exception::class, $this->container->get('service2'));
         $this->assertSame('value1', $this->container->get('parameter1'));
+        $this->assertSame(array('value_1', 'value_2'), $this->container->get('array'));
+    }
+
+    public function testHasEntryFromContainer()
+    {
+        $this->assertTrue($this->container->has('service1'));
+        $this->assertTrue($this->container->has('service2'));
+        $this->assertTrue($this->container->has('parameter1'));
+        $this->assertTrue($this->container->has('array'));
+    }
+
+    public function testThatContainerReturnsFalseWhenEntryDoesNotExist()
+    {
+        $this->assertFalse($this->container->has('not_exists'));
     }
 
     public function testThatDoesNotExist()
     {
-        $this->setExpectedException(NotFoundException::class);
+        $this->setExpectedException(NotFoundExceptionInterface::class);
         $this->container->get('service_does_not_exist');
     }
 }

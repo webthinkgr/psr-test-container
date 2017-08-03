@@ -23,9 +23,16 @@ class SimpleContainer implements ContainerInterface
      * SimpleContainer constructor.
      *
      * @param array $entries An array containing entries for the container.
+     * @throws \Psr\Container\ContainerExceptionInterface
      */
     public function __construct(array $entries)
     {
+        foreach ($entries as $key => $entry) {
+            if (!is_string($key)) {
+                throw new ContainerException('All entries of the container must have a string key');
+            }
+        }
+
         $this->entries = $entries;
     }
 
@@ -41,6 +48,10 @@ class SimpleContainer implements ContainerInterface
      */
     public function get($id)
     {
+        if (!is_string($id)) {
+            throw new ContainerException('Id must be a string');
+        }
+
         if (!$this->has($id)) {
             throw new NotFoundException();
         }
