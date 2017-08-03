@@ -28,7 +28,7 @@ class SimpleContainerTest extends \PHPUnit_Framework_TestCase
 
     public function testInitializeTheContainerWithANonStringKeyForAService()
     {
-        $this->setExpectedException(ContainerExceptionInterface::class);
+        $this->setExpectedException('Psr\Container\ContainerExceptionInterface');
         new SimpleContainer(array(1 => new \stdClass()));
     }
 
@@ -61,7 +61,7 @@ class SimpleContainerTest extends \PHPUnit_Framework_TestCase
 
     public function testThatDoesNotExist()
     {
-        $this->setExpectedException(NotFoundExceptionInterface::class);
+        $this->setExpectedException('Psr\Container\NotFoundExceptionInterface');
         $this->container->get('service_does_not_exist');
     }
 }

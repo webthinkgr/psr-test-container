@@ -1,5 +1,7 @@
 # A PSR Container for testing
 
+[![Build Status](https://travis-ci.org/webthinkgr/psr-test-container.svg?branch=master)](https://travis-ci.org/webthinkgr/psr-test-container)
+
 A PSR container implementation to be used only for testing
 
 ## Goal
