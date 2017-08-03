@@ -16,6 +16,10 @@ Via Composer
 ## Usage
 
 ```
-$skeleton = new League\Skeleton();
-echo $skeleton->echoPhrase('Hello, League!');
+$container = new Webthink\Container\SimpleContaner(
+    array(
+        'service1' => new \stdClass(),
+    )
+);
+$service = $container->get('service1');
 ```
