@@ -34,7 +34,7 @@ class SimpleContainerTest extends \PHPUnit_Framework_TestCase
 
     public function testGetServiceFromContainerWithANonStringValue()
     {
-        $this->setExpectedException(ContainerExceptionInterface::class);
+        $this->setExpectedException('Psr\Container\ContainerExceptionInterface');
         $this->container->get(1);
     }
     
