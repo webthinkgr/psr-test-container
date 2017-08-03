@@ -40,8 +40,8 @@ class SimpleContainerTest extends \PHPUnit_Framework_TestCase
     
     public function testGetEntryFromContainer()
     {
-        $this->assertInstanceOf(\stdClass::class, $this->container->get('service1'));
-        $this->assertInstanceOf(\Exception::class, $this->container->get('service2'));
+        $this->assertInstanceOf('stdClass', $this->container->get('service1'));
+        $this->assertInstanceOf('Exception', $this->container->get('service2'));
         $this->assertSame('value1', $this->container->get('parameter1'));
         $this->assertSame(array('value_1', 'value_2'), $this->container->get('array'));
     }
