@@ -5,10 +5,8 @@ namespace Webthink\Container;
 use Psr\Container\ContainerInterface;
 
 /**
- * Class SimpleContainer
- *
  * A simple container implementation.
- * This package container is meant to be used only for testing purposes.
+ * The container of this package is meant to be used only for testing purposes.
  *
  * @author George Mponos <gmponos@gmail.com>
  */
@@ -20,8 +18,6 @@ class SimpleContainer implements ContainerInterface
     private $entries;
 
     /**
-     * SimpleContainer constructor.
-     *
      * @param array $entries An array containing entries for the container.
      * @throws \Psr\Container\ContainerExceptionInterface
      */
