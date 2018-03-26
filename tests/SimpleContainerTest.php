@@ -2,10 +2,11 @@
 
 namespace Webthink\Container\Test;
 
-use Psr\Container\ContainerExceptionInterface;
-use Psr\Container\NotFoundExceptionInterface;
 use Webthink\Container\SimpleContainer;
 
+/**
+ * @author George Mponos <gmponos@gmail.com>
+ */
 class SimpleContainerTest extends \PHPUnit_Framework_TestCase
 {
     /**
@@ -17,19 +18,19 @@ class SimpleContainerTest extends \PHPUnit_Framework_TestCase
     {
         parent::setUp();
         $this->container = new SimpleContainer(
-            array(
+            [
                 'service1' => new \stdClass(),
                 'parameter1' => 'value1',
                 'service2' => new \Exception(),
-                'array' => array('value_1', 'value_2')
-            )
+                'array' => ['value_1', 'value_2'],
+            ]
         );
     }
 
     public function testInitializeTheContainerWithANonStringKeyForAService()
     {
         $this->setExpectedException('Psr\Container\ContainerExceptionInterface');
-        new SimpleContainer(array(1 => new \stdClass()));
+        new SimpleContainer([1 => new \stdClass()]);
     }
 
     public function testGetServiceFromContainerWithANonStringValue()
@@ -37,13 +38,13 @@ class SimpleContainerTest extends \PHPUnit_Framework_TestCase
         $this->setExpectedException('Psr\Container\ContainerExceptionInterface');
         $this->container->get(1);
     }
-    
+
     public function testGetEntryFromContainer()
     {
         $this->assertInstanceOf('stdClass', $this->container->get('service1'));
         $this->assertInstanceOf('Exception', $this->container->get('service2'));
         $this->assertSame('value1', $this->container->get('parameter1'));
-        $this->assertSame(array('value_1', 'value_2'), $this->container->get('array'));
+        $this->assertSame(['value_1', 'value_2'], $this->container->get('array'));
     }
 
     public function testHasEntryFromContainer()
