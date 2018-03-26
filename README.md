@@ -1,7 +1,6 @@
-# A PSR Container for testing
+# A Simple PSR Container.
 
 [![Build Status](https://travis-ci.org/webthinkgr/psr-test-container.svg?branch=master)](https://travis-ci.org/webthinkgr/psr-test-container)
-![license](http://www.wtfpl.net/wp-content/uploads/2012/12/wtfpl-badge-2.png)
 
 A PSR container implementation to be used only for testing purposes.
 
