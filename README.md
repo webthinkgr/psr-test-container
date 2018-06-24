@@ -1,4 +1,4 @@
-# A Simple PSR Container.
+# A Simple PSR Container for Testing.
 
 [![Build Status](https://travis-ci.org/webthinkgr/psr-test-container.svg?branch=master)](https://travis-ci.org/webthinkgr/psr-test-container)
 
