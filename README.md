@@ -14,7 +14,7 @@ The current packages serves this goal.
 
 Via Composer
 
-    $ composer require webthink/psr-test-container
+    $ composer require-dev webthink/psr-test-container
 
 ## Usage
 

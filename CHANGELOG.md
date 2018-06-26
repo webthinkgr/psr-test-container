@@ -4,6 +4,11 @@ All Notable changes to `webthink/psr-test-container` will be documented in this 
 
 Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
+## v1.* - DATE.
+
+### Added
+- Added .gitattributes file.
+
 ## v1.0.0 - 2018-08-03.
 
 ### Added
